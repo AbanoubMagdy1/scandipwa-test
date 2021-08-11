@@ -1,0 +1,57 @@
+.CheckoutSteps {
+  width: 100%;
+  background-color: rgb(238, 238, 238);
+  height: 6rem;
+  &-outer {
+    width: 100%;
+    height: 5px;
+    background-color: #ccc;
+    position: relative;
+    transform: translateY(-100%);
+
+    .inner {
+      width: 50%;
+      height: inherit;
+      background-color: rgb(167, 31, 31);
+      transition: 1s width ease-in-out;
+    }
+
+    .steps {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      transform: translateY(-50%);
+
+      .step {
+        box-sizing: content-box;
+        width: 30px;
+        height: 30px;
+        color: #fff;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 6px solid rgb(238, 238, 238);
+        transition: 0.5s background-color;
+
+        &.active {
+          background-color: rgb(167, 31, 31);
+        }
+
+        &::after {
+          content: attr(text);
+          position: absolute;
+          top: 150%;
+          display: block;
+          white-space: nowrap;
+          font-weight: bold;
+          color: #000;
+        }
+      }
+    }
+  }
+}
